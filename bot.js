@@ -57,13 +57,7 @@ function movementCycle() {
 
   setTimeout(movementCycle, STEP_INTERVAL);
 }
-
-bot.on('error', (err) => {
-  console.error('⚠️ Error:', err);
-});
-bot.on('end', () => {
-  console.log('⛔️ Bot Disconnected!');
-  bot.on('login', () => {
+bot.on('login', () => {
   console.log('✅ Logged in');
 });
 
@@ -72,10 +66,9 @@ bot.on('kicked', (reason) => {
 });
 
 bot.on('end', () => {
-  console.log('⛔ Disconnected');
+  console.log('⛔ Bot Disconnected!');
 });
 
 bot.on('error', (err) => {
-  console.log('⚠️ Error:', err);
+  console.error('⚠️ Error:', err);
 });
-
