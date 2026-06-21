@@ -63,4 +63,19 @@ bot.on('error', (err) => {
 });
 bot.on('end', () => {
   console.log('⛔️ Bot Disconnected!');
+  bot.on('login', () => {
+  console.log('✅ Logged in');
 });
+
+bot.on('kicked', (reason) => {
+  console.log('⛔ Kicked:', reason);
+});
+
+bot.on('end', () => {
+  console.log('⛔ Disconnected');
+});
+
+bot.on('error', (err) => {
+  console.log('⚠️ Error:', err);
+});
+
