@@ -80,4 +80,11 @@ bot.on('end', () => {
 });
 setInterval(() => {
   console.log(Object.keys(bot.players));
-}, 10000);
+});
+bot.on('spawn', () => {
+  bot.chat('/register 123456 123456');
+  bot.chat('/login 123456');
+});
+bot.on('spawn', () => {
+  console.log('✅ Bot Spawned');
+});
