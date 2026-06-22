@@ -1,4 +1,4 @@
-const mineflayer = require('mineflayer');
+juconst mineflayer = require('mineflayer');
 const config = require('./config.json');
 
 const bot = mineflayer.createBot({
@@ -72,3 +72,16 @@ bot.on('end', () => {
 bot.on('error', (err) => {
   console.error('⚠️ Error:', err);
 });
+bot.on('spawn', () => {
+  bot.chat('/register 123456 123456');
+  bot.chat('/login 123456');
+});
+bot.on('end', () => {
+  console.log('Disconnected. Reconnecting in 10 seconds...');
+  setTimeout(() => {
+    process.exit(1);
+  }, 10000);
+});
+setInterval(() => {
+  console.log(Object.keys(bot.players));
+}, 10000);
