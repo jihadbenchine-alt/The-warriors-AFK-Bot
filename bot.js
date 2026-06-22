@@ -60,31 +60,18 @@ function movementCycle() {
 bot.on('login', () => {
   console.log('✅ Logged in');
 });
-
 bot.on('kicked', (reason) => {
   console.log('⛔ Kicked:', reason);
 });
-
-bot.on('end', () => {
-  console.log('⛔ Bot Disconnected!');
-});
-
 bot.on('error', (err) => {
   console.error('⚠️ Error:', err);
 });
 bot.on('end', () => {
-  console.log('Disconnected. Reconnecting in 10 seconds...');
+  console.log('⛔ Bot Disconnected!');
+  console.log('Reconnecting in 10 seconds...');
+
   setTimeout(() => {
     process.exit(1);
   }, 10000);
 });
-setInterval(() => {
-  console.log(Object.keys(bot.players));
-});
-bot.on('spawn', () => {
-  bot.chat('/register 123456 123456');
-  bot.chat('/login 123456');
-});
-bot.on('spawn', () => {
-  console.log('✅ Bot Spawned');
-});
+
