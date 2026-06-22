@@ -72,10 +72,6 @@ bot.on('end', () => {
 bot.on('error', (err) => {
   console.error('⚠️ Error:', err);
 });
-bot.on('spawn', () => {
-  bot.chat('/register 123456 123456');
-  bot.chat('/login 123456');
-});
 bot.on('end', () => {
   console.log('Disconnected. Reconnecting in 10 seconds...');
   setTimeout(() => {
