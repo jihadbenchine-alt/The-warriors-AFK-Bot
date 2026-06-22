@@ -1,4 +1,4 @@
-juconst mineflayer = require('mineflayer');
+const mineflayer = require('mineflayer');
 const config = require('./config.json');
 
 const bot = mineflayer.createBot({
